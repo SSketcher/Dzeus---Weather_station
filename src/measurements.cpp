@@ -1,3 +1,4 @@
+#include "measurements.h"
 #include <Wire.h>
 #include <DHT.h>
 #include "DFRobot_VEML7700.h"
@@ -14,52 +15,37 @@ Adafruit_BMP085 p_sensor;               //Presure  and internal temperature seno
 
 
 
-
-
-class sensors_unit
+Sensors_unit::Sensors_unit()		//constructor
 {
-    public:
-
-    private:
-
-};
-
-/*
-
-
-//Initialization of all sensors
-void init(){
+    //Initialization of all sensors
     th_sensor.begin();
     p_sensor.begin();
     li_sensor.begin();
 }
 
-//
-float measure(){
+
+float Sensors_unit:update(){
 
 }
 
-float get_th(){
+float Sensors_unit:get_th(){
     return th_sensor.readTemperature(), th_sensor.readHumidity();
 }
 
-float get_li(){
+float Sensors_unit:get_li(){
     float lux;
     li_sensor.getALSLux(lux);
     return lux;
 }
 
-float get_uv(){
-
+float Sensors_unit:get_uv(){
+    return light.getUV();
 }
 
-float get_p(){
+float Sensors_unit:get_p(){
     return p_sensor.readPressure();
 }
 
-float get_internal_temperature(){
+float Sensors_unit:get_internal_temperature(){
     return p_sensor.readTemperature();
 }
-
-
-*/
