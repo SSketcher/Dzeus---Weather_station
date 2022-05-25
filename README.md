@@ -1,10 +1,13 @@
 # Dzeus---Weather_station
 
 ## General info
-Project of weather station
+Project of weather station consisting of set of sensors measuring outside conditions in real time.
 
-
-
+Current tasks:
+- [ ] soldering electronics
+- [ ] coding "measurement" module
+- [ ] coding "time" module
+- [ ] testing basic functionality of the project
 
 ## Technologies
 * ESP 32
