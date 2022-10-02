@@ -1,4 +1,4 @@
-#include <Time.h>
+/*#include <Time.h>
 //#include <DS1307RTC.h>
 
 const char* NTP_SERVER = "ch.pool.ntp.org";
@@ -21,3 +21,4 @@ void RTC_init(){
 void Time_chceck(){
     
 }
+*/

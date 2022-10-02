@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <measurements.h>
 #include <time_module.cpp>
+#include <Wire.h>
 
 
 #define LED_BUILTIN   2
@@ -11,14 +12,15 @@ void setup() {
   Serial.println("Dzeus Weather station");
   Serial.println("Sensors initialization...");
   sensors.init();
-  Serial.println("Initialization of RTC...");
-  RTC_init();
+  //Serial.println("Initialization of RTC...");
+  //RTC_init();
 
 
 }
 
 void loop() {
-
+  sensors.update();
+  delay(5000);
 }
 
 
