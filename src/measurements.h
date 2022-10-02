@@ -5,6 +5,8 @@ class Sensors_unit
 
         float get_internal_temperature();
 
+        void init();
+
         void update();
 
 
