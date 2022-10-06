@@ -1,6 +1,9 @@
-/*#include <Time.h>
+#include "time_module.h"
+#include <Time.h>
 //#include <DS1307RTC.h>
 
+
+//NTP server and time zone info
 const char* NTP_SERVER = "ch.pool.ntp.org";
 const char* TZ_INFO    = "CET-1CEST-2,M3.5.0/02:00:00,M10.5.0/03:00:00";
 
@@ -10,15 +13,26 @@ time_t now;
 long unsigned lastNTPtime;
 unsigned long lastEntryTime;
 
-void NTP_init(){
+Time::Time()
+{
+}
+
+void Time::init(){
 
 }
 
-void RTC_init(){
+void Time::checkTime(){
 
 }
 
-void Time_chceck(){
-    
+void Time::update_time(){
+
 }
-*/
+
+void Time::NTP_init(){
+
+}
+
+void Time::RTC_init(){
+
+}
