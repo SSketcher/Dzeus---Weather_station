@@ -1,8 +1,8 @@
 #include <Arduino.h>
 #include <measurements.h>
-#include <time_module.cpp>
 #include <wifi_module.cpp>
 #include <Wire.h>
+#include "time.h"
 
 
 #define LED_BUILTIN   2
@@ -15,8 +15,7 @@ void setup() {
   sensors.init();
   Serial.println("WiFi initialization...");
   WIFI_init();
-  //Serial.println("Initialization of RTC...");
-  //RTC_init();
+  Serial.println("Initialization of RTC...");
 
 
 }

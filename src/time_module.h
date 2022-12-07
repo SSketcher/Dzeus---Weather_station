@@ -1,19 +1,11 @@
-class Time
+class Time_unit
 {
     public:
-        Time();
+        Time_unit();
 
         void init();
 
         void checkTime();
 
         void update_time();
-
-
-    private:
-
-        void NTP_init();
-
-        void RTC_init();
-        
 };

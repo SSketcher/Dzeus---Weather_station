@@ -1,6 +1,6 @@
+#include "time.h"
 #include "time_module.h"
-#include <Time.h>
-//#include <DS1307RTC.h>
+
 
 
 //NTP server and time zone info
@@ -13,26 +13,24 @@ time_t now;
 long unsigned lastNTPtime;
 unsigned long lastEntryTime;
 
-Time::Time()
+
+
+Time_unit::Time_unit()
 {
 }
 
-void Time::init(){
+void Time_unit::init(){
+    configTime(0, 0, NTP_SERVER);
+    setenv("TZ", TZ_INFO, 1);
+    //tzset();
+}
+
+void Time_unit::checkTime(){
 
 }
 
-void Time::checkTime(){
+void Time_unit::update_time(){
 
 }
 
-void Time::update_time(){
 
-}
-
-void Time::NTP_init(){
-
-}
-
-void Time::RTC_init(){
-
-}

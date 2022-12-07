@@ -10,10 +10,12 @@ const char* password = "YOUR_PASSWORD";
 void WIFI_init(){
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
-    Serial.print("Connecting to WiFi ..");
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
     while (WiFi.status() != WL_CONNECTED) {
         Serial.print('.');
         delay(1000);
     }
+    Serial.print("Connect...  ");
     Serial.println(WiFi.localIP());
 }
