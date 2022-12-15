@@ -1,11 +1,14 @@
-class Time_unit
-{
-    public:
-        Time_unit();
+#ifndef TIME_MODULE_H
+#define TIME_MODULE_H
 
-        void init();
+#include "time.h"
+#include "WiFi.h"
 
-        void checkTime();
+bool rtc_init();
+bool get_uptime(int sec);
+void checkTime();
 
-        void update_time();
-};
+extern long unsigned lastNTPtime;
+extern unsigned long lastEntryTime;
+
+#endif

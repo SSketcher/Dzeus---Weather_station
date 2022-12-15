@@ -1,15 +1,4 @@
-#include "measurements.h"
-#include <SPI.h>
-#include <Wire.h>
-#include <DHT.h>
-#include "Adafruit_VEML7700.h"
-#include <ML8511.h>
-#include <Adafruit_BMP085.h>
-
-
-//Defining pins for analog sensors
-#define DHT22_PIN 4
-#define UV_PIN  32
+#include "sensors_module.h"
 
 //I2C status status to avoid crash at update
 bool status_BMP180 = true;

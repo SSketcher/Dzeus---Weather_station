@@ -1,3 +1,17 @@
+#ifndef SENSORS_MODULE_H
+#define SENSORS_MODULE_H
+
+#include <SPI.h>
+#include <Wire.h>
+#include <DHT.h>
+#include "Adafruit_VEML7700.h"
+#include <ML8511.h>
+#include <Adafruit_BMP085.h>
+
+//Defining pins for analog sensors
+#define DHT22_PIN 4
+#define UV_PIN  32
+
 class Sensors_unit
 {
     public:
@@ -22,3 +36,5 @@ class Sensors_unit
         void get_p();
 
 };
+
+#endif
