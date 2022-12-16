@@ -14,15 +14,18 @@ bool rtc_init(){
 
         if(get_uptime(30)){
             Serial.println("RTC initialized...");
+            Serial.print("\n");
             return 1;
         }else{
             Serial.println("Can not initialized RTC");
             Serial.println("NTP server does not respond...");
+            Serial.print("\n");
             return 0;
         }
     }else{
         Serial.println("Can not initialized RTC");
         Serial.println("WiFi is not connected...");
+        Serial.print("\n");
         return 0;
     }
 }
@@ -34,7 +37,6 @@ bool get_uptime(int sec){
         Serial.println("Conecting to NTP server...");
         time(&now);
         localtime_r(&now, &timeinfo);
-        Serial.print(".");
         delay(10);
     } while (((millis() - start) <= (1000 * sec)) && (timeinfo.tm_year < (2016 - 1900)));
 
@@ -43,6 +45,8 @@ bool get_uptime(int sec){
     }else{
         Serial.print("Currant POSIX time: ");  
         Serial.println(now);
+        Serial.print("Currant time: ");
+        checkTime();
     }
   }
   return true;
@@ -52,5 +56,4 @@ void checkTime(){
     char time_output[30];
     strftime(time_output, 30, "%a  %d-%m-%y %T", localtime(&now));
     Serial.println(time_output);
-    Serial.println();
 }

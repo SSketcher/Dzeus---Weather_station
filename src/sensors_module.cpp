@@ -35,8 +35,7 @@ void Sensors_unit::init(){
     else{
         Serial.println("VEML7700 Light intensity sensor -- Initalized");
     }
-        
-
+    Serial.print("\n");    
 }
 
 void Sensors_unit::update(){

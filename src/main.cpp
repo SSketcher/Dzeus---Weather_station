@@ -11,7 +11,7 @@ Sensors_unit sensors;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("Dzeus Weather station");
+  Serial.println("Dzeus Weather station\n");
   Serial.println("WiFi initialization...");
   WIFI_ini();
   Serial.println("Initialization of internal RTC...");

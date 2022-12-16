@@ -12,9 +12,10 @@ void WIFI_ini(){
     Serial.print("Connecting to ");
     Serial.println(ssid);
     while (WiFi.status() != WL_CONNECTED) {
-        Serial.print('.');
+        Serial.println("Conecting to WiFi...");
         delay(1000);
     }
     Serial.print("Connect...  ");
     Serial.println(WiFi.localIP());
+    Serial.print("\n");
 }
