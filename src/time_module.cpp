@@ -57,3 +57,7 @@ void checkTime(){
     strftime(time_output, 30, "%a  %d-%m-%y %T", localtime(&now));
     Serial.println(time_output);
 }
+
+time_t get_POSIX(){
+    return now;
+}

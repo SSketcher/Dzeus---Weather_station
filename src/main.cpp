@@ -1,12 +1,10 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include "sensors_module.h"
 #include "wifi_module.h"
-#include <time_module.h>
+#include "time_module.h"
+#include "struct.h"
+#include "sensors_module.h"
 
-
-
-#define LED_BUILTIN   2
 Sensors_unit sensors;
 
 void setup() {
@@ -21,8 +19,11 @@ void setup() {
 }
 
 void loop() {
-  sensors.update();
-  delay(5000);
+  data measurements;
+  sensors.update(&measurements);
+  checkTime();
+  measurements.time = get_POSIX();
+  delay(10000);
 }
 
 
