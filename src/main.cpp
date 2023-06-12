@@ -1,29 +1,28 @@
 #include <Arduino.h>
 #include <Wire.h>
-#include "wifi_module.h"
-#include "time_module.h"
 #include "struct.h"
 #include "sensors_module.h"
+#include "thingProperties.h"
 
 Sensors_unit sensors;
+data measurements;
 
 void setup() {
   Serial.begin(9600);
   Serial.println("Dzeus Weather station\n");
-  Serial.println("WiFi initialization...");
-  WIFI_ini();
-  Serial.println("Initialization of internal RTC...");
-  rtc_init();
   Serial.println("Sensors initialization...");
   sensors.init();
+  Serial.println("Arduino IoT Cloud initialization...");
+  initProperties(&measurements);
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
 }
 
 void loop() {
-  data measurements;
+  //Updating sensors valeus
   sensors.update(&measurements);
-  checkTime();
-  measurements.time = get_POSIX();
-  delay(10000);
+
+  //Updating Arduino IoT Cloud
+  ArduinoCloud.update();
 }
 
 

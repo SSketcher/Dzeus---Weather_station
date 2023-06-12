@@ -8,7 +8,6 @@
 //humidity  (float) - humidity in % from DHT22
 //light_intensity (float) - light intensity in lx feom VEML7700
 //uv_intensity (float) - UV intensity in mW/cm^2 from ?
-//time (time_t) - reading time as a POSIX time
 struct data
 {
     float temperature = 0;
@@ -16,7 +15,6 @@ struct data
     float pressure = 0;
     float light_intensity = 0;
     float uv_intensity = 0;
-    time_t time;
 };
 
 #endif
