@@ -14,20 +14,31 @@ data measurements;
 
 void setup() {
   Serial.begin(9600);
+  delay(1500); 
   Serial.println("Dzeus Weather station\n");
   Serial.println("Sensors initialization...");
   sensors.init();
   Serial.println("Arduino IoT Cloud initialization...");
-  initProperties(&measurements);
+  initProperties();
   ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+  setDebugMessageLevel(2);
+  ArduinoCloud.printDebugInfo();
 }
 
 void loop() {
+  //Updating Arduino IoT Cloud
+  ArduinoCloud.update();
+
+
   //Updating sensors valeus
   sensors.update(&measurements);
 
-  //Updating Arduino IoT Cloud
-  ArduinoCloud.update();
+  humidity = measurements.humidity;
+  light_intensity = measurements.light_intensity;
+  pressure = measurements.pressure;
+  temperature = measurements.temperature;
+  uv_intensity = measurements.uv_intensity;
+  delay(1000);
 }
 
 

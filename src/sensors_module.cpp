@@ -65,13 +65,13 @@ void Sensors_unit::update(data *data_struct){
     Serial.printf("Air humidity: %f %\n", data_struct->humidity);
 
 
-    //Updating temperature and humidity from DHT22
+    //Updating light intensity from VEML7700
     if(status_VEML7700){
         data_struct->light_intensity = li_sensor.readLux();
         Serial.printf("Light intesity: %f lx\n", data_struct->light_intensity);
     }
 
-    //Updating temperature and humidity from DHT22
+    //Updating UV intensity from ML8511 with ADS1115
     if(status_ADS){
         int16_t adc0;
         float outputVoltage = 0.0;
