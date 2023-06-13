@@ -1,5 +1,10 @@
 #include <Arduino.h>
 #include <Wire.h>
+
+//Code is crashing without this two lines, but most likely those are unnecessary
+#include <WiFi.h>
+#include <Arduino_ESP32_OTA.h>
+
 #include "struct.h"
 #include "sensors_module.h"
 #include "thingProperties.h"
